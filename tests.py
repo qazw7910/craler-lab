@@ -1,5 +1,3 @@
-from time import sleep
-
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
@@ -31,7 +29,6 @@ search_button = WebDriverWait(driver, 10).until(
     EC.visibility_of_element_located((By.XPATH, '/html/body/div[1]/main/section/div[3]/div[3]/div/div/div[1]/div/a[1]'))
 )
 search_button.click()
-
 
 driver.save_screenshot('png/2.png')
 
