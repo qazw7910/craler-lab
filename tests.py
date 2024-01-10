@@ -1,23 +1,38 @@
 from time import sleep
 
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
-# Correct the path if necessary and make sure the executable is in the specified directory.
 chrome_path = './chromedriver.exe'
 
-# Create a Service object using the path to the chromedriver
+options = Options()
+options.add_argument('--no-sandbox')
+options.add_argument('--disable-gpu')
+options.add_argument('--disable-application-cache')
+options.add_argument('--disable-extensions')
+
 service = Service(executable_path=chrome_path)
 
-# Pass the service object to the driver
-driver = webdriver.Chrome(service=service)
+driver = webdriver.Chrome(service=service, options=options)
 
 driver.get('https://www.cathaybk.com.tw/cathaybk/')
 
-sleep(3)
+search = WebDriverWait(driver, 10).until(
+    EC.visibility_of_element_located((By.ID, 'searchBox'))
+)
 
-# Include the file extension .png for the screenshot
-driver.save_screenshot('1.png')
+search.send_keys('信用卡')
+
+search_button = WebDriverWait(driver, 10).until(
+    EC.visibility_of_element_located((By.XPATH, '/html/body/div[1]/main/section/div[3]/div[3]/div/div/div[1]/div/a[1]'))
+)
+search_button.click()
+
+
+driver.save_screenshot('png/2.png')
 
 driver.quit()
