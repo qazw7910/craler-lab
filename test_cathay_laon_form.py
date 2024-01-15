@@ -28,6 +28,17 @@ amount = [(By.ID, 'amount'), (By.XPATH, '//*[@id="amount"]')]
 Fee = [(By.ID, 'Fee'), (By.XPATH, '//*[@id="Fee"]')]
 periodrate1 = [(By.ID, 'periodrate1'), (By.XPATH, '//*[@id="periodrate1"]')]
 
+    # -------------------------------------------
+    CAPTCHA_REPAYMENT_ICON_HOME_CLASS_NAME = (By.CLASS_NAME, 'icon_breadcrumbs_home')
+    CAPTCHA_REPAYMENT_ICON_HOME_TAG_NAME = (By.TAG_NAME, 'i')
+    # -------------------------------------------
+    CAPTCHA_REPAYMENT_H2_XPATH = (By.XPATH, '//*[@id="layout_0_main_0_Section_Title"]/div/div/div[2]/h2')
+    CAPTCHA_REPAYMENT_H2_TAG_NAME = (By.TAG_NAME, 'h2')
+    # -------------------------------------------
+    CAPTCHA_CHANGE_LANGUAGE_ID = (By.ID, 'lnk_LanguageLink')
+    CAPTCHA_CHANGE_LANGUAGE_XPATH = (By.XPATH, '//*[@id="lnk_LanguageLink"]')
+    # -------------------------------------------
+
 
 
 element = driver.find_element(By.ID, 'amount')
