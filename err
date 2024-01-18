@@ -1,0 +1,45 @@
+Traceback (most recent call last):
+  File "D:\Users\00551189\PycharmProjects\topic3\venv\Lib\site-packages\PIL\ImageDraw.py", line 507, in draw_text
+    mask, offset = font.getmask2(
+                   ^^^^^^^^^^^^^^
+  File "D:\Users\00551189\PycharmProjects\topic3\venv\Lib\site-packages\PIL\ImageFont.py", line 768, in getmask2
+    im.national_id,
+    ^^^^^^^^^^^^^^
+AttributeError: 'ImagingCore' object has no attribute 'national_id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Users\00551189\PycharmProjects\topic3\tests\module\id_maker.py", line 132, in <module>
+    id_image.id_barcode_maker()  # 輸出身分證背面圖片路徑
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Users\00551189\PycharmProjects\topic3\tests\module\id_maker.py", line 100, in id_barcode_maker
+    barcode.generate(
+  File "D:\Users\00551189\PycharmProjects\topic3\venv\Lib\site-packages\barcode\__init__.py", line 118, in generate
+    return barcode.save(output, writer_options, text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Users\00551189\PycharmProjects\topic3\venv\Lib\site-packages\barcode\base.py", line 64, in save
+    output = self.render(options, text) if text else self.render(options)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Users\00551189\PycharmProjects\topic3\venv\Lib\site-packages\barcode\codex.py", line 255, in render
+    return super().render(options, text)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Users\00551189\PycharmProjects\topic3\venv\Lib\site-packages\barcode\base.py", line 100, in render
+    return self.writer.render(code)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Users\00551189\PycharmProjects\topic3\venv\Lib\site-packages\barcode\writer.py", line 269, in render
+    self._callbacks["paint_text"](xpos, ypos)
+  File "D:\Users\00551189\PycharmProjects\topic3\venv\Lib\site-packages\barcode\writer.py", line 446, in _paint_text
+    self._draw.text(
+  File "D:\Users\00551189\PycharmProjects\topic3\venv\Lib\site-packages\PIL\ImageDraw.py", line 564, in text
+    draw_text(ink)
+  File "D:\Users\00551189\PycharmProjects\topic3\venv\Lib\site-packages\PIL\ImageDraw.py", line 523, in draw_text
+    mask = font.getmask(
+           ^^^^^^^^^^^^^
+  File "D:\Users\00551189\PycharmProjects\topic3\venv\Lib\site-packages\PIL\ImageFont.py", line 652, in getmask
+    return self.getmask2(
+           ^^^^^^^^^^^^^^
+  File "D:\Users\00551189\PycharmProjects\topic3\venv\Lib\site-packages\PIL\ImageFont.py", line 768, in getmask2
+    im.national_id,
+    ^^^^^^^^^^^^^^
+AttributeError: 'ImagingCore' object has no attribute 'national_id'
