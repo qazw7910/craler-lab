@@ -7,6 +7,8 @@ import pandas as pd
 import time
 import os
 
+# https://medium.com/seaniap/python%E7%B6%B2%E9%A0%81%E7%88%AC%E8%9F%B2-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8selenium%E7%88%AC%E5%8F%96%E7%B6%B2%E9%A0%81%E8%B3%87%E6%96%99-2-4d302e32960d
+
 web = 'https://nlab.itmedia.co.jp/research/category/entertainment/anime'
 
 chrome_path = './chromedriver.exe'
