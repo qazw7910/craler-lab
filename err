@@ -1,45 +1,38 @@
-Traceback (most recent call last):
-  File "D:\Users\00551189\PycharmProjects\topic3\venv\Lib\site-packages\PIL\ImageDraw.py", line 507, in draw_text
-    mask, offset = font.getmask2(
-                   ^^^^^^^^^^^^^^
-  File "D:\Users\00551189\PycharmProjects\topic3\venv\Lib\site-packages\PIL\ImageFont.py", line 768, in getmask2
-    im.national_id,
-    ^^^^^^^^^^^^^^
-AttributeError: 'ImagingCore' object has no attribute 'national_id'
+手動測試
+S:要去測試欄位的反向測試，使用XPATH定位網頁元素位置
+T:網頁元素會隨著點選後，XPATH定位網頁元素位置可能會有所不同導致定位失敗
+A:當要測試某項網頁元素位置時，使用PYCHARM斷點的方法
+R:可以快速到達所要測試的前一個欄位，也可以確保前面所有的動作一致，前面因為所點選過後變動的位置，都可以透過動作固定來定位元素．
 
-During handling of the above exception, another exception occurred:
+手動測試-選取定位元素
+S:對欄位裡的列表做選取
+T:在欄位選取時，無法跟之前一樣順利用點擊的方式選取
+A:直接去搜索Python Selenium 欄位選取
+R:找到了Selenium提供的Select方法，提供了select_by （index, value, visible_text)這幾種夠有效率的選取邏輯，也取代了我對於選單的點選方法．
 
-Traceback (most recent call last):
-  File "D:\Users\00551189\PycharmProjects\topic3\tests\module\id_maker.py", line 132, in <module>
-    id_image.id_barcode_maker()  # 輸出身分證背面圖片路徑
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Users\00551189\PycharmProjects\topic3\tests\module\id_maker.py", line 100, in id_barcode_maker
-    barcode.generate(
-  File "D:\Users\00551189\PycharmProjects\topic3\venv\Lib\site-packages\barcode\__init__.py", line 118, in generate
-    return barcode.save(output, writer_options, text)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Users\00551189\PycharmProjects\topic3\venv\Lib\site-packages\barcode\base.py", line 64, in save
-    output = self.render(options, text) if text else self.render(options)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Users\00551189\PycharmProjects\topic3\venv\Lib\site-packages\barcode\codex.py", line 255, in render
-    return super().render(options, text)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Users\00551189\PycharmProjects\topic3\venv\Lib\site-packages\barcode\base.py", line 100, in render
-    return self.writer.render(code)
-           ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Users\00551189\PycharmProjects\topic3\venv\Lib\site-packages\barcode\writer.py", line 269, in render
-    self._callbacks["paint_text"](xpos, ypos)
-  File "D:\Users\00551189\PycharmProjects\topic3\venv\Lib\site-packages\barcode\writer.py", line 446, in _paint_text
-    self._draw.text(
-  File "D:\Users\00551189\PycharmProjects\topic3\venv\Lib\site-packages\PIL\ImageDraw.py", line 564, in text
-    draw_text(ink)
-  File "D:\Users\00551189\PycharmProjects\topic3\venv\Lib\site-packages\PIL\ImageDraw.py", line 523, in draw_text
-    mask = font.getmask(
-           ^^^^^^^^^^^^^
-  File "D:\Users\00551189\PycharmProjects\topic3\venv\Lib\site-packages\PIL\ImageFont.py", line 652, in getmask
-    return self.getmask2(
-           ^^^^^^^^^^^^^^
-  File "D:\Users\00551189\PycharmProjects\topic3\venv\Lib\site-packages\PIL\ImageFont.py", line 768, in getmask2
-    im.national_id,
-    ^^^^^^^^^^^^^^
-AttributeError: 'ImagingCore' object has no attribute 'national_id'
+#心得
+對於重複的動作，所使用的工具可以提供解決方案
+S:在開發的過程，可能會一直遇到需要重複去處理的動作
+T:如果是一直需要反覆去處理的動作，可能會導致開發效率變差
+A:可以往是不是自己對工具的不熟悉，或有更多的快捷鍵方式來加速自己開發的過程
+R:可以讓開發的過程更加順利，同時熟練運用開發工具，也可以避免再修改程式碼的過程，造成程式碼的不一致性狀況發生。
+
+對於重複的動作所需要的思考變化
+S:要去測試欄位的反向測試，使用XPATH定位網頁元素位置
+T:網頁元素會隨著點選後，XPATH定位網頁元素位置可能會有所不同導致定位失敗
+A:當要測試某項網頁元素位置時，使用PYCHARM斷點的方法
+R:可以快速到達所要測試的前一個欄位，也可以確保前面所有的動作一致，前面因為所點選過後變動的位置，都可以透過動作固定來定位元素．
+
+專題3信用卡進件
+手動測試
+S:要去測試欄位的反向測試，使用XPATH定位網頁元素位置
+T:網頁元素會隨著點選後，XPATH定位網頁元素位置可能會有所不同導致定位失敗
+A:當要測試某項網頁元素位置時，使用PYCHARM斷點的方法
+R:可以快速到達所要測試的前一個欄位，也可以確保前面所點選的動作一致，前面因為所點選變動的位置，
+
+手動測試
+S:要上傳指定照片上去
+T:照片輸入好絕對路徑的位置，並且使用send_keys的方式一直都沒辦法成功
+A:後來是使用第三方的套件pyautogui的方式解決→不是很合適的方法
+後面有針對send_keys的方式做各種嘗試．
+R:但其實對於這個結果，一直都沒有很滿意因為就我認知，目前網路上大家用的方式都是send_key，應該是我對於這方式沒有更透測的理解
