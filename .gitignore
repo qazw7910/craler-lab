@@ -163,3 +163,5 @@ png
 
 chromedriver.exe
 png/1.png
+tests/_id_back.jpg
+tests/_id_front.jpg
